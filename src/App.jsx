@@ -1,8 +1,8 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import './App.css'
+import PhotoContainer, { loader as ImageLoader } from './components/PhotoContainer';
+import Layout from './components/Layout';
 import Error from './components/Error';
-import Layout from './components/Layout'
-import PhotoContainer, { loader as ImageLoader } from './components/PhotoContainer'
+import './App.css';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +20,7 @@ function App() {
 
 export default App;
 
+
 /** createBrowserRouter
  * To use the new data APIs you'll have to use the new routers introduced in 6.4
  * https://reactrouter.com/en/main/routers/picking-a-router
@@ -29,7 +30,7 @@ export default App;
 
 /** createRoutesFromElements
  * Using the `createRoutesFromElements` you can build your Route tree as used in previous versions
- * of React Router. Note: You'll no longer need to use Routes or Switches.
+ * of React Router. You'll no longer need to use Routes or Switches.
  */
 
 /** errorElement
@@ -39,6 +40,7 @@ export default App;
 
 /** loader
  * This function can be used to provide data to the route element before it is rendered
+ * Data returned from this function will be available in the component through the useLoaderData hook
  * https://reactrouter.com/en/main/route/loader
  */
 
